@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Fecha
+comment0.text=\r\n\ La\ clase\ Fecha\ tiene\ la\ intenci\u00F3n\ de\ representar\ el\ tipo\ abstracto\ fecha.\r\n\ Aunque\ ya\ existen\ librer\u00EDas\ encargadas\ de\ esta\ funcion\:\r\n\ @see\ <a\ href\="http\://www.baeldung.com/java-8-date-time-intro">\ Ver\ documentacion\ tipo\ Time\ </a>\r\n\ En\ este\ ejercicio\ podemos\ tener\ una\ compresi\u00F3n\ m\u00E1s\ profunda\ de\ su\ funcionamiento\ interno.\r\n\ \r\n\ @author\ Mauricio\ Toro,\ Andres\ Paez\r\n\ @version\ 1\r\n
+comment1.params=dia\ mes\ anyo
+comment1.target=Fecha(int,\ int,\ int)
+comment1.text=\r\n\ Se\ inicializan\ las\ variables\ globales\ en\ el\ constructor\ de\ manera\ que\ no\ posean\ valores\ nulos\ o\ 0s.\r\n
+comment2.params=
+comment2.target=int\ dia()
+comment2.text=\r\n\ M\u00E9todo\ para\ obtener\ la\ variable\ global\ dia.\r\n\r\n\ @return\ el\ dia\r\n
+comment3.params=
+comment3.target=int\ mes()
+comment3.text=\r\n\ M\u00E9todo\ para\ obtener\ la\ variable\ global\ mes.\r\n\r\n\ @return\ el\ mes\r\n
+comment4.params=
+comment4.target=int\ anio()
+comment4.text=\r\n\ M\u00E9todo\ para\ obtener\ la\ variable\ global\ anio.\r\n\r\n\ @return\ el\ a\u00F1o\r\n
+comment5.params=otra
+comment5.target=int\ comparar(Fecha)
+comment5.text=\r\n\ @param\ otra\ representa\ la\ fecha\ con\ la\ culase\ va\ a\ comparar.\r\n\r\n\ El\ m\u00E9todo\ comprar\ se\ encarga\ de\ devolvernos\ respuesta\ a\ tres\ posibilidades.\r\n\ 1\:\ si\ la\ fecha\ es\ menor\ que\ la\ otra\ retorna\ -1.\r\n\ 2\:\ si\ la\ fecha\ es\ igual\ que\ la\ otra\ retorna\ 0.\r\n\ 3\:\ si\ la\ fecha\ es\ mayor\ que\ la\ otra\ retorna\ 1.\r\n\r\n\ @return\ -1\ s\u00ED\ es\ menor;\ 0\ s\u00ED\ es\ igual;\ 1\ s\u00ED\ es\ mayor.\r\n\r\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\r\n\ toString\ se\ encargar\u00E1\ de\ convertir\ el\ tipo\ abstracto\ fecha\ en\ un\ tipo\ cadena\r\n\ para\ su\ posterior\ visualizaci\u00F3n\r\n\r\n\ @return\ una\ cadena\ que\ contiene\ la\ fecha\r\n
+numComments=7
