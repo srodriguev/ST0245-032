@@ -31,9 +31,14 @@ public class Contador
         cuenta += cantidad;
     }
 
-    /*
+    /**
     Se podría implementar un metodo decrementar para hacer la operacion inversa de incrementar.
     */
+   public void decrementar(int cantidad)
+   {
+       cuenta -= cantidad;
+    }
+   
 
     /**
      * El método incrementos nos muestra en que valor se encuentra la cuenta actualmente.
@@ -54,6 +59,6 @@ public class Contador
     */
     public String toString() 
     {
-        return "ID: " + id + "Cuenta: " +cuenta;
+        return "ID: " + id + "Cuenta: " + cuenta;
     }
 }

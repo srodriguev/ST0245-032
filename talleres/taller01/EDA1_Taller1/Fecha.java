@@ -10,9 +10,8 @@
  */
 
 public class Fecha {
-    
 
-    /*
+    /**
     varibales con atributo final indican que una variable es de tipo 
     constante, es decir, no admitirá cambios después de su declaración y asignación de valor.
     final determina que un atributo no puede ser sobreescrito o redefinido.
@@ -63,7 +62,7 @@ public class Fecha {
     }
 
     /**
-    * @param otra representa la fecha con la culase va a comparar.
+    * @param otra representa la fecha con la cual se va a comparar.
     *
     * El método comprar se encarga de devolvernos respuesta a tres posibilidades.
     * 1: si la fecha es menor que la otra retorna -1.
