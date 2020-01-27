@@ -22,7 +22,7 @@ public class Linea
     }
     
    
-    public Punto[] PuntosIntermedios(int x1, int x2, int y1, int y2) // algoritmo de Bresenham
+    public Punto[] PuntosIntermedios(int x1, int x2, int y1, int y2) // algoritmo de Bresenham 
     {
     
         int dx = x2-x1;  // distancia que se desplazan 
@@ -74,8 +74,9 @@ public class Linea
             }
             puntos[i] = new Punto(x,y);
         }
+            // referencia algoritmo: https://es.wikipedia.org/wiki/Algoritmo_de_Bresenham
+        
         return puntos;
-       
     }
     
 }
