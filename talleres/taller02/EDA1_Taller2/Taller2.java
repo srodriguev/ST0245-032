@@ -1,11 +1,11 @@
         
-/**
+ /**
  *La clase taller dos tiene como objetivo dar solución
  *a 3 problemas recursivos
  *
  *@autor Mauricio Toro, Camilo Paez
  *@version 1
- */
+ */ 
         
   public class Taller2 
   {
@@ -46,7 +46,57 @@
             *
             * @return verdadero si hay un subconjunto el cual su suma = target
             */
-     public static boolean SumaGrupo(int[] nums, int target) 
+     
+     public static boolean SumaGrupo( int[] nums, int target) 
+     {
+         return SumaGrupo(0, nums, target);
+        }
+            
+     /**
+            * @param start entrada 1 entero positivo, determina un índice dentro del proceso
+            * @param nums entrada 2 arreglo de enteros positivos, sobre el cual vamos a interar 
+            * @param target entrada 3 entero positivo, determina el valor de referencia 
+            * El método SumaGrupo tiene como objetivo darnos a conocer si hay 
+            * algun subconjunto el cual su suma = target.
+            * 
+            * Este método SumaGrupo es "private" de modo que solo se puede llamar desde el interior de la clase pues
+            * el método que lo representa es el SumaGrupo público.
+            * Para más detalles sobre modificadores de acceso:
+            * @see <a href="http://ayudasprogramacionweb.blogspot.com/2013/02/modificadores-acceso-public-protected-private-java.html"> modificadores </a>
+            *
+            *
+            * @return verdadero si hay un subconjunto el cual su suma = target
+            * 
+            * N O T A S :
+            * Tenemos dos versiones que pudimos llegar como grupo. Una mas extensa y otra aún más resumida.
+            * También al consultar más sobre el tema hemos encontrado un método con tablas de hallar la suma, se anexa como dato curioso
+            * 
+            */
+     private static boolean SumaGrupo(int start, int[] nums, int target) 
+      {
+            if(target == 0)
+                 return true;
+            
+            if(start == nums.length)
+                 return false;
+            
+            if(SumaGrupo(start + 1, nums, target - nums[start]))
+                 return true;
+            
+            return SumaGrupo(start + 1, nums, target);
+      }
+      
+     private static boolean SumaGrupo2(int start, int[] nums, int target) 
+     {
+        
+        if(start>=nums.length) 
+            return target==0;
+        else 
+            return (SumaGrupo(start+1, nums, target-nums[start]) || SumaGrupo(start+1, nums, target));
+        
+    } 
+    
+    public static boolean SumaGrupoPorTablas(int[] nums, int target) 
       {
         // Referenced by Tushar Roy, Backtracking and Dynamic Programming Tables. Available on: https://www.youtube.com/watch?v=s6FhG--P7z0  :) 
           
@@ -71,36 +121,6 @@
             }
         }
         return T[nums.length][target];
-      }
-            
-            
-     /**
-            * @param start entrada 1 entero positivo, determina un índice dentro del proceso
-            * @param nums entrada 2 arreglo de enteros positivos, sobre el cual vamos a interar 
-            * @param target entrada 3 entero positivo, determina el valor de referencia 
-            * El método SumaGrupo tiene como objetivo darnos a conocer si hay 
-            * algun subconjunto el cual su suma = target.
-            * 
-            * Este método SumaGrupo es "private" de modo que solo se puede llamar desde el interior de la clase pues
-            * el método que lo representa es el SumaGrupo público.
-            * Para más detalles sobre modificadores de acceso:
-            * @see <a href="http://ayudasprogramacionweb.blogspot.com/2013/02/modificadores-acceso-public-protected-private-java.html"> modificadores </a>
-            *
-            *
-            * @return verdadero si hay un subconjunto el cual su suma = target
-            */
-     private static boolean SumaGrupo(int start, int[] nums, int target) 
-      {
-            if(target == 0)
-                 return true;
-            
-            if(start == nums.length)
-                 return false;
-            
-            if(SumaGrupo(start + 1, nums, target - nums[start]))
-                 return true;
-            
-            return SumaGrupo(start + 1, nums, target);
       }
             
      /**
@@ -137,7 +157,7 @@
             else
             {
                 combinationsAux(prefix + s.charAt(0), s.substring(1));
-                combinationsAux( prefix, s.substring( 1 ));
+                combinationsAux(prefix, s.substring( 1 ));
             }
        }
 
