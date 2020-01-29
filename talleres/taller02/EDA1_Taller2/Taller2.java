@@ -98,7 +98,7 @@
     
     public static boolean SumaGrupoPorTablas(int[] nums, int target) 
       {
-        // Referenced by Tushar Roy, Backtracking and Dynamic Programming Tables. Available on: https://www.youtube.com/watch?v=s6FhG--P7z0  :) 
+        // Created and originally implemented by Tushar Roy (2015) Backtracking and Dynamic Programming Tables. Available watch on: https://www.youtube.com/watch?v=s6FhG--P7z0 as of 28/01/2020.
           
         boolean T[][] = new boolean[nums.length + 1][target + 1];
         
