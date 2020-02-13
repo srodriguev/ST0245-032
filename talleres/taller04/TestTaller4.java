@@ -22,13 +22,13 @@ public class TestTaller4
 	    
 	    public static boolean ejercicio2(){
 	    	boolean a, b, c, d;
-			a=Taller4.groupSum(0, new int[] {2, 4, 8}, 9);
-			b=Taller4.groupSum(0, new int[] {2, 4, 8}, 8);
-			c=Taller4.groupSum(0, new int[] {10, 2, 2, 5}, 9);
-			d=Taller4.groupSum(0, new int[] {10, 2, 2, 5}, 17);
-			if(!a && b && c && d)
-				return true;
-			return false;
+		a=Taller4.groupSum(0, new int[] {2, 4, 8}, 9);
+		b=Taller4.groupSum(0, new int[] {2, 4, 8}, 8);
+		c=Taller4.groupSum(0, new int[] {10, 2, 2, 5}, 9);
+		d=Taller4.groupSum(0, new int[] {10, 2, 2, 5}, 17);
+		if(!a && b && c && d)
+			return true;
+		return false;
 		}
 	    
 	    
@@ -74,7 +74,7 @@ public class TestTaller4
       public static void testEj1()
       {
           
-        for(int i=80; i<=100; i++)
+        for(int i=8000; i<=11000; i+=200)
           {
             
             int[] arr = new int[i];
@@ -94,6 +94,7 @@ public class TestTaller4
 
       public static void testEj2()
       {
+          
          for(int i=10; i<=30; i++){
             int[] arr = new int[i];
             Random rnd = new Random();
@@ -114,6 +115,7 @@ public class TestTaller4
 
       public static void testEj3()
       {
+          
         for(int i=20; i<=40; i++)
          {
             //int fib = 30;
