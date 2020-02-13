@@ -59,7 +59,7 @@ public class TestTaller4
 	        else
 	        System.out.println("Ejercicio 2 Incorrecto");
 
-                //testEj2();
+                testEj2();
 	        
 	        //Ejercicio3
 	        if(ejercicio3())
@@ -67,61 +67,62 @@ public class TestTaller4
 	        else
 	        System.out.println("Ejercicio 3 Incorrecto");
 
-                //testEj3(); 
+                testEj3(); 
          
 	    }
 
       public static void testEj1()
       {
-        for(int i=0; i<=100; i++)
+          
+        for(int i=80; i<=100; i++)
           {
-            int k=1000;
-            int[] arr = new int[k];
+            
+            int[] arr = new int[i];
             Random rnd = new Random();
-            for (int j = 0; j < arr.length; j++) {
+            for (int j = 0; j < arr.length; j++) 
+            {
             arr[j] = rnd.nextInt(1000 - 1 );
             }
             long inicio= System.currentTimeMillis();
-            int a = Taller4.arrayMax(arr, k-1);
+            int a = Taller4.arrayMax(arr, i-1);
             long fin= System.currentTimeMillis();
             long tiempo = fin-inicio;
             System.out.println(i+" "+(fin-inicio));
-            k+=100;
+            
           }
       }
 
       public static void testEj2()
       {
-         for(int i=0; i<=50; i++){
-            int k=20;
-            int[] arr = new int[k];
+         for(int i=10; i<=30; i++){
+            int[] arr = new int[i];
             Random rnd = new Random();
-            for (int j = 0; j < arr.length; j++) {
-            arr[j] = rnd.nextInt(200);
+            for (int j = 0; j < arr.length; j++) 
+            {
+            arr[j] = rnd.nextInt(100);
             }
-            int max = 400, min = 200;
+            int max = 150, min = 80;
             int target = rnd.nextInt((max - min) + 1) + min;
             long inicio= System.currentTimeMillis();
             boolean a = Taller4.groupSum(0,arr,target);
             long fin= System.currentTimeMillis();
             long tiempo = fin-inicio;
             System.out.println(i+" "+(fin-inicio));
-            k+=500;
+            
           }
       }
 
       public static void testEj3()
       {
-        for(int i=0; i<=50; i++)
+        for(int i=20; i<=40; i++)
          {
-
-            int fib = 30;
+            //int fib = 30;
             long inicio= System.currentTimeMillis();
-            long a = Taller4.fibonacci(fib);
+            long a = Taller4.fibonacci(i);
             long fin= System.currentTimeMillis();
             long tiempo = fin-inicio;
             System.out.println(i+" "+(fin-inicio));
-            fib+=5;
+            //fib++;
           } 
       }
 }
