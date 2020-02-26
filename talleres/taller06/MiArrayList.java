@@ -83,14 +83,48 @@ public class MiArrayList {
           throw new Exception("index out of bound exception index = "+i);          
     }
     
+    public void add(int index, int e) {
+	if ( index < size && index >= 0) {
+
+	    for (int i = 0; i< size; i++) {
+		if (i == size && size == elements.length) {
+		    extend();
+		}
+
+		if (i == index) {
+		    int swap = elements[i] ;
+		    elements[i] = e;
+		    elements[i + 1] = swap;
+		    i++;
+		    size++;
+		}
+	    }
+	}else if (index == size) {
+	    elements[index] = e;
+	    size++;
+	    if (size == elements.length) {
+		extend();
+	    }
+	}
+    }
+
+    private void extend() {
+        int[] array2 =  new int[elements.length + elements.length ];
+        for (int i = 0; i < size; i++) {
+            array2[i] = elements[i];
+        }
+        elements = array2;
+    }
+    
     
     /**
     * @param index es la posicion en la cual se va agregar el elemento
     * @param e el elemento a guardar
     * Agrega un elemento e en la posición index de la lista
     * 
+    * Versión antigua
     */
-    public void add(int index, int e)throws Exception {
+    public void addv1(int index, int e)throws Exception {
        if(index > size+1)
        {
           throw new Exception("index out of bound exception index = "+index);
