@@ -1,0 +1,3 @@
+la complejidad del método hace difícil su implementación a gran escala, por lo cual no es una buena estrategia para ser implementado en un editor de texto. 
+La complejidad del método como se plantea actualmente tiene una complejidad de 2n, lo cual es problemático al analizar cuantos caracteres tiene un 
+programa en promedio versus que tanto aumentaría el costo de computarlo para la máquina.
