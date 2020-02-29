@@ -1,9 +1,11 @@
-﻿/*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package laboratorio2_eda1;
+
 import java.util.Random;
 /**
  *
@@ -127,7 +129,7 @@ public class Laboratorio2_EDA1 {
         mergeSort(X);
         InsertionSort(X);     
       }
-      testInsertion();
+      //testInsertion();
       testMerge();
   }
   
@@ -153,7 +155,7 @@ public class Laboratorio2_EDA1 {
   
   public static void testMerge() {
         System.out.println("Test Merge: ");
-        for(int i=10000; i<=100000000; i+=3000000)
+        for(int i=10000; i<=500000000; i+=5000000)
           {
             
             int[] arr = new int[i];
