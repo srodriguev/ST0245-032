@@ -20,6 +20,8 @@ public class Laboratorio3 {
         String[] ok = {"a","b"};
        MarcoDeDatos.main(ok);
        Usuario.main(ok);
+       
+     
     }
     
 }

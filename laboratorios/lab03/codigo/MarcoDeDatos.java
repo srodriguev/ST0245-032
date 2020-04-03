@@ -42,7 +42,9 @@ public class MarcoDeDatos {
     public LinkedList leerDatos(String nombre) throws IOException {
         //List<Dato> al = new LinkedList<Dato> ();
         File file = new File(nombre);
-        BufferedReader br = new BufferedReader(new FileReader(file));
+        //BufferedReader br = new BufferedReader(new FileReader(file));
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(
+                nombre), "UTF-16"));
 
         String st;
         int cont = 0;

@@ -39,6 +39,7 @@ public class Consultas extends Usuario {
        {
            Dato current = (Dato) datos.get(i);
            
+           
            if ((current.codMateria).equals(materia) && (current.semestre).equals(semestree))
            {
                System.out.println("Estudiante "+(i+1)+", "+current.nombre+", cumple con los requisitos");    
