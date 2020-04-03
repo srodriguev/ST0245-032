@@ -23,7 +23,7 @@ public class Usuario {
     public static void ejecucion() throws IOException {
 
         Scanner sc = new Scanner(System.in);
-        Consultas c = new Consultas();
+        
         
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -32,10 +32,12 @@ public class Usuario {
         System.out.println("2. Consulta 2");
 
         int a = sc.nextInt();
+        Consultas c = new Consultas();
 
         switch (a) {
 
             case 1:
+                
 
                 System.out.println("Inserte la materia a consultar:");
                 //String materia = sc.nextLine();
@@ -49,9 +51,12 @@ public class Usuario {
                 String semestre = reader.readLine();
 
                 c.c1(materia, semestre);
+                System.out.println("Llamó a consulta 1");
                 break;
 
             case 2:
+                
+                
                 System.out.println("Inserte el estudiante a consultar:");
                 //String materia = sc.nextLine();
                 String estudiante = reader.readLine();
@@ -64,6 +69,7 @@ public class Usuario {
                 String semestree = reader.readLine();
                 
                 c.c2(estudiante, semestree);
+                System.out.println("Llamó a consulta 2");
                 break;
 
         }

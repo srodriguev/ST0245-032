@@ -25,17 +25,25 @@ public class Consultas extends Usuario {
      */
     public void c1(String materia, String semestree){
         
+        System.out.println("Inicia consulta 1");
+        
        LinkedList datos = MarcoDeDatos.getMyData();
        
-       Dato current = (Dato) datos.get(0);
+       //Dato current = (Dato) datos.get(0);
        //System.out.println(current.nombre);
        int range = datos.size();
+       
+       System.out.println("Num datos: "+range);
+       
        for (int i=0;i<range;i++)
        {
+           Dato current = (Dato) datos.get(i);
+           
            if ((current.codMateria).equals(materia) && (current.semestre).equals(semestree))
            {
-               System.out.println("Estudiante "+(i+1)+", "+current.nombre+", cumple con los requisitos");
-           }          
+               System.out.println("Estudiante "+(i+1)+", "+current.nombre+", cumple con los requisitos");    
+           }  
+           
            
        }
        
@@ -43,13 +51,16 @@ public class Consultas extends Usuario {
 
     public void c2(String estudiantee, String semestree){
         
+        System.out.println("Inicia consulta 2");
+        
         LinkedList datos = MarcoDeDatos.getMyData();
         
-        Dato current = (Dato) datos.get(0);
+        //Dato current = (Dato) datos.get(0);
        //System.out.println(current.nombre);
        int range = datos.size();
        for (int i=0;i<range;i++)
        {
+           Dato current = (Dato) datos.get(i);
            if ((current.codMateria).equals(estudiantee) && (current.semestre).equals(semestree))
            {
                System.out.println("Estudiante "+(i+1)+", "+current.nombre+", cumple con los requisitos");
