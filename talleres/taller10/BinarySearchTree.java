@@ -5,7 +5,7 @@
     
         // Constructor sin parametros iniciar sin nodo
     public BinarySearchTree() {
-        this.root = null;
+        this.root = root;
     }
     //Contructor iniciando con nodo
     public BinarySearchTree(int n) {
@@ -17,6 +17,8 @@
         insertarAux(root, n); // O(log2(n))
     }
     // Agrega un nodo al arbol
+    // Worst case O(n) - Sin balancear
+    //O(logn) - Average - sin balancear
     private void insertarAux(Node node, int n) {
         if (node.data == n){
             return;
@@ -41,25 +43,32 @@
     }
     
     //Busca en el arbol si existe un valor, devuelve true o false, dependiendo de si este o no
+    // Worst case: O(n) - Sin balancear
+    //O(logn) - Average - sin balancear
     private boolean buscarAux(Node node, int n) {
         if (node.data == n) {
             return true;
         }
-        if (node == null) {
+        else if (node == null) {
             return false;
         }
-        if (n > node.data) {
+        else if (node.right == null && node.left == null){
+            return false;
+        }
+        else if (n > node.data) {
             return buscarAux(node.right, n);
         }
-        return buscarAux(node.left, n);
+        else return buscarAux(node.left, n);
     }
 
     //Llama al metodo auxiliar borrar
     public void borrar(int n) {
-        borrarAux(root, n);
+        borrarAux(root, n); 
     }
     
     //Borra un nodo el arbol
+    // O(n) Worst Case - sin balancear
+    //O(logn) - Average - sin balancear
      private Node borrarAux(Node node, int n) {
         if (node == null) {
             return null;
@@ -103,6 +112,7 @@
     }
 
     //Aux, imprime desde un nodo
+    //O(n), recorre todo el árbol
     public void imprimirarbol(Node nodo)
     {
       Node raiz = nodo;

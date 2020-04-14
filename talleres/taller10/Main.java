@@ -9,7 +9,12 @@ class Main {
     tree.insertar(10);
     tree.insertar(12);
 
+
+    boolean bool12 = tree.buscar(12);
+    System.out.println(bool12);
     tree.borrar(12);
+    bool12 = tree.buscar(12);
+    System.out.println(bool12);
     tree.imprimirarbol(tree);
   }
 }
