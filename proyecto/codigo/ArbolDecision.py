@@ -24,6 +24,8 @@ import csv
 # ---------------------------------------------------------------------------------------------------------
 """
     Método auxiliar que retorna el estado de la memoria
+    Return: 
+      mem: memoria usada
 """
 
 def memory_usage_psutil():
@@ -38,8 +40,10 @@ def memory_usage_psutil():
 
 """
     Método auxiliar que lee el espacio que toma leer cierto dataset
-    Argumentos:
+    Args:
       dataseto: nombre del dataframe a leer
+    Return: 
+      read_time: Tiempo de lectura.
 """
 
 def read_dataset_time(dataseto):
@@ -65,8 +69,10 @@ def read_dataset_time(dataseto):
  
 """
     Método auxiliar que lee el tiempo que toma construir un array numpy
-    Argumentos:
+    Args:
       dataseto: nombre del dataframe a leer
+    Return: 
+      read_time: Tiempo de lectura.
 
 """    
 
@@ -95,8 +101,10 @@ def build_array_time(dataseto):
 
 """
     Método auxiliar que lee el tiempo que toma construir una lista de python
-    Argumentos:
+    Args:
       dataseto: nombre del dataframe a leer
+    Return: 
+      read_time: Tiempo de lectura.
 """       
 
 def build_list_time(dataseto):
@@ -124,8 +132,10 @@ def build_list_time(dataseto):
     
 """
     Método auxiliar que lee el uso de memoria con una lista python
-    Argumentos:
+    Args:
       dataseto: nombre del dataframe a leer
+    Return: 
+      finalHeap: Tamaño final del heap.
 """   
     
 def build_list_heap(dataseto):
@@ -153,8 +163,10 @@ def build_list_heap(dataseto):
     
 """
     Método auxiliar que toma el tiempo de lectura + conversión a array de un dataset.
-    Argumentos:
-      dataseto: nombre del dataframe a leer
+    Args:
+      dataseto: nombre del dataframe a leer.
+    Return: 
+      read_time: Tiempo de lectura.
 """  
     
 def build_allSet_time(dataseto):
@@ -278,9 +290,12 @@ print(read_dataset_time("4_train_balanced_135000.csv"))
 # ---------------------------------------------------------------------------------------------------------  
 """
 Método que separara una parte del dataset como test-dataset
-Argumentos:
+Args:
   df: dataframe a partir.
   test_size: tamaño de la partición.
+Return:
+  train_df: dataframe de entrenamiento.
+  test_df: dataframe de prueba.
 """
 
 def train_test_split(df, test_size):
@@ -299,10 +314,12 @@ def train_test_split(df, test_size):
 
 """
   método para identificar datos comunes y "outlier"/extremos que se alejan de los grupos principales. 
-  Argumentos:
+  Args:
     n: número de elementos/filas
     specific_outliers: lista de python para guardar los datos extremos.
     n_random_outliers: dato extremo.
+  Return: 
+    df: dataframe depurado.
 """
 def generate_data(n, specific_outliers=[], n_random_outliers=None):
     
@@ -334,7 +351,7 @@ def generate_data(n, specific_outliers=[], n_random_outliers=None):
 
 """
   Método para graficar con matplotlib, señala los límites
-  Argumentos:
+  Args:
     tree: el árbol que se armó
     x_min: valor x mínimo
     x_max: valor x máximo
@@ -366,7 +383,7 @@ def plot_decision_boundaries(tree, x_min, x_max, y_min, y_max):
 
 """
   Método para graficar con matplotlib, llama al método anterior.
-  Argumentos:
+  Args:
     df: dataframe a graficar
     tree: árbol que se arma
     título: título del gráfico
@@ -387,8 +404,10 @@ def create_plot(df, tree=None, title=None):
 
 """
   Función que determina la pureza de unos datos
-  Argumentos:
+  Args:
     data: elementos a analizar.
+  Return:
+    Retorna True/False. Dato booleano.
 """
 
 # 1. Decision Tree helper functions
@@ -405,9 +424,11 @@ def check_purity(data):
 
 """ 
 Función que crea una hoja
-  Argumentos:
+  Args:
     data: elementos a analizar.
     ml_task: indicador de regresión o clasificación.
+  Return:
+    leaf: Retorna una hoja.
 """  
 # 1.2 Create Leaf
 def create_leaf(data, ml_task):
@@ -426,8 +447,10 @@ def create_leaf(data, ml_task):
 
 """
 Función que busca splits/cortes potenciales
-Argumentos
+Args:
   data: conjunto de datos a ser analizados.
+Return: 
+  potential_splits: retorna los cortes potenciales.
 """
 
 # 1.3 Determine potential splits
@@ -445,8 +468,10 @@ def get_potential_splits(data):
 
 """
 Función que determina la entroía de Shannon
-Argumentos:
+Args:
   data: conjunto de datos a ser analizados.
+Return:
+  entropy: retorna la medida de entropía.
 """
 
 # 1.4 Determine Best Split
@@ -462,8 +487,10 @@ def calculate_entropy(data):
 
 """
 Función que calcula el MSE (mean squared error) o sea el error promedio
-Argumentos:
+Args:
   data: conjunto de datos a ser analizados.
+Return: 
+  mse: retorna la medida del mse.
 """
 def calculate_mse(data):
     actual_values = data[:, -1]
@@ -478,10 +505,12 @@ def calculate_mse(data):
 
 """
  Calcula las métricas para los data sets divididos por el split (arriba/abajo)
- Argumentos:
+ Args:
   data_below: Conjunto de datos inferior a una división.
   data_above: Conjunto de datos inferior a una división.
   metric_function: función de medición.
+Return:
+  overall_metric: medida general, o promedio de las métricas.
 """
 
 def calculate_overall_metric(data_below, data_above, metric_function):
@@ -497,10 +526,13 @@ def calculate_overall_metric(data_below, data_above, metric_function):
 
 """
 Determina que dato es el mejor para crear un split/corte potencial
-Argumentos:
+Args:
   data: conjunto de datos de a analizar.
   potential_splits: conjunto de cortes potenciales.
   ml_task: dvisión si se está clasificando o haciendo regresión en los datos.
+Return:
+  best_split_column: columna de mejor corte.
+  best_split_value: mejor valor para cortar el dataset.
 """
 
 def determine_best_split(data, potential_splits, ml_task):
@@ -529,10 +561,13 @@ def determine_best_split(data, potential_splits, ml_task):
 
 """
 Función que separa los datasets en dos subconjuntos
-Argumentos:
+Args:
   data: conjunto de datos a analizar.
   split_column: columna de corte.
   split_value: valor del corte.
+Return:
+  data_below: data en el conjunto inferior.
+  data_above: data en el conjunto superior.
 """
 
 # 1.5 Split data
@@ -555,8 +590,10 @@ def split_data(data, split_column, split_value):
 
 """
 Determina cuales atributos son categóricos o numéricos
-Argumentos:
+Args:
   df: dataframe a analizar.
+Return:
+  feature_types: los tipos de atributos encontrados.
 
 """
 
@@ -580,12 +617,14 @@ def determine_type_of_feature(df):
 
 """
 Algoritmo de creación del árbol de decisión. recursivo.
-Argumentos:
+Args:
   df: dataframe para la construcción del árbol
   ml_task: dvisión si se está clasificando o haciendo regresión en los datos.
   counter: contador
   min_samples: número mínimo de muestra
   max_depth: profundidad máxima del árbol
+Return:
+  sub_tree: Sub-árbol del árbol recibido como parámetros tras su división.
 """
 
 # 2.2 Algorithm
@@ -652,9 +691,12 @@ def decision_tree_algorithm(df, ml_task, counter=0, min_samples=2, max_depth=5):
 
 """
 Método de predicción para un solo atributo. Es recursivo.
-Argumentos:
+Args:
   example: atributo a comparar.
   tree: árbol con el cual se compara.
+Return:
+  return answer: caso base
+  return predict_example(example, residual_tree): caso recursivo
 """
 
 # 3. Make predictions
@@ -693,9 +735,11 @@ def predict_example(example, tree):
 
 """
 Método que permite comparar todo un conjunto de atributos a los resultados de un árbol.
-Argumentos:
+Args:
   df: dataframe a comparar
   tree: árbol con el cual se compara
+Return:
+  predictions: conjunto de predicciones del dataframe.
 """
     
 # 3.2 All examples of a dataframe
@@ -712,9 +756,11 @@ def make_predictions(df, tree):
 
 """
 Método que calcula la exactitud de una comparación/predicción
-Argumentos:
+Args:
   df: dataframe a comparar con el árbol.
   tree: árbol de la comparación.
+Return:
+  accuracy: retorna la medida de exactitud.
 """
 
 # 3.3 Accuracy
